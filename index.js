@@ -1,0 +1,10 @@
+const express=require("express")
+const app=express()
+app.use(express.json())
+const{students}=require("./routes/students.middleware")
+const { teacher } = require("./routes/teachers.middleware")
+app.use("/student",students)
+app.use("/teacher",teacher)
+app.listen(4500,()=>{
+    console.log("server running")
+})
